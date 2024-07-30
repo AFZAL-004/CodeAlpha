@@ -1,0 +1,77 @@
+#menu-toggle {
+    display: none;
+    background-color: #00B0FF;
+    color: #030000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+#menu-toggle:hover {
+    background-color: #000b0f;
+    color: #00B0FF;
+}
+
+#nav-menu {
+    display: flex;
+    justify-content: space-around; /* Use space-around for even spacing */
+    flex-wrap: wrap; /* Allow items to wrap */
+    width: 70%; 
+    padding: 0 10px; /* Add padding if needed */
+}
+
+.about-btn {
+    margin: 5px; /* Add margin for spacing */
+    font-size: 50px;
+}
+
+@media (max-width: 450px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #toolbar p{
+        color: #646363;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1a1a; /* Dark background for menu */
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        width: 100%;
+        z-index: 1;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    }
+
+    #nav-menu.show {
+        display: flex;
+    }
+
+    .about-btn {
+        color: #ffffff; /* White text */
+        padding: 15px;
+        transition: all 0.3s ease; /* Smooth transition for all properties */
+        margin: 5px 0; /* Add some margin between buttons */
+        width: 100%; /* Full width */
+        text-align: center; /* Center the text */
+        border-bottom: 1px solid #ffffff; /* Line below */
+        opacity: 0; /* Initially hidden */
+        transform: translateY(-20px); /* Slightly move up */
+    }
+
+    .about-btn.show {
+        opacity: 1; /* Show */
+        transform: translateY(0); /* Move to original position */
+    }
+
+    .about-btn:hover {
+        transform: scale(1.1); /* Enlarge on hover */
+        color: #00B0FF; /* Change text color on hover */
+        box-shadow: 0 0 10px rgba(0, 95, 153, 0.5); /* Slight glow on hover */
+    }
+}
